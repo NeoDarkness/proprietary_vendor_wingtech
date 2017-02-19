@@ -49,7 +49,12 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/etc/firmware/cpp_firmware_v1_4_0.fw:system/etc/firmware/cpp_firmware_v1_4_0.fw \
     vendor/wingtech/wt88047/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
     vendor/wingtech/wt88047/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
+    vendor/wingtech/wt88047/proprietary/lib/hw/camera.vendor.msm8916.so:system/lib/hw/camera.vendor.msm8916.so \
     vendor/wingtech/wt88047/proprietary/lib/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
+    vendor/wingtech/wt88047/proprietary/lib/libmmcamera_interface.so:system/lib/libmmcamera_interface.so \
+    vendor/wingtech/wt88047/proprietary/lib/libmmjpeg_interface.so:system/lib/libmmjpeg_interface.so \
+    vendor/wingtech/wt88047/proprietary/lib/libmm-qcamera.so:system/lib/libmm-qcamera.so \
+    vendor/wingtech/wt88047/proprietary/lib/libqomx_core.so:system/lib/libqomx_core.so \
     vendor/wingtech/wt88047/proprietary/lib/libOmxVdecHevc.so:system/lib/libOmxVdecHevc.so \
     vendor/wingtech/wt88047/proprietary/lib/libwcnss_qmi.so:system/lib/libwcnss_qmi.so \
     vendor/wingtech/wt88047/proprietary/vendor/bin/perfd:system/vendor/bin/perfd \
@@ -59,31 +64,180 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libacdb-fts.so:system/vendor/lib/libacdb-fts.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libacdbloader.so:system/vendor/lib/libacdbloader.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libacdbrtac.so:system/vendor/lib/libacdbrtac.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_camcorder.so:system/vendor/lib/libactuator_dw9714_13p1ba_camcorder.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_camera.so:system/vendor/lib/libactuator_dw9714_13p1ba_camera.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba.so:system/vendor/lib/libactuator_dw9714_13p1ba.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_sunny_camcorder.so:system/vendor/lib/libactuator_dw9714_13p1ba_sunny_camcorder.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_sunny_camera.so:system/vendor/lib/libactuator_dw9714_13p1ba_sunny_camera.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_sunny.so:system/vendor/lib/libactuator_dw9714_13p1ba_sunny.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_bu64297_q13v06k.so:system/vendor/lib/libactuator_bu64297_q13v06k.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_bu64297_q13v06k_camcorder.so:system/vendor/lib/libactuator_bu64297_q13v06k_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_bu64297_q13v06k_camera.so:system/vendor/lib/libactuator_bu64297_q13v06k_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714.so:system/vendor/lib/libactuator_dw9714.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_h2x.so:system/vendor/lib/libactuator_dw9714_13p1ba_h2x.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_h2x_camcorder.so:system/vendor/lib/libactuator_dw9714_13p1ba_h2x_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_13p1ba_h2x_camera.so:system/vendor/lib/libactuator_dw9714_13p1ba_h2x_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_camcorder.so:system/vendor/lib/libactuator_dw9714_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_camera.so:system/vendor/lib/libactuator_dw9714_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_meituosi_h2x.so:system/vendor/lib/libactuator_dw9714_meituosi_h2x.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_meituosi_h2x_camcorder.so:system/vendor/lib/libactuator_dw9714_meituosi_h2x_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_meituosi_h2x_camera.so:system/vendor/lib/libactuator_dw9714_meituosi_h2x_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_sikao_h2x.so:system/vendor/lib/libactuator_dw9714_sikao_h2x.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_sikao_h2x_camcorder.so:system/vendor/lib/libactuator_dw9714_sikao_h2x_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9714_sikao_h2x_camera.so:system/vendor/lib/libactuator_dw9714_sikao_h2x_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s.so:system/vendor/lib/libactuator_dw9718s.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s_camcorder.so:system/vendor/lib/libactuator_dw9718s_camcorder.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s_camera.so:system/vendor/lib/libactuator_dw9718s_camera.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s.so:system/vendor/lib/libactuator_dw9718s.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s_sunny_a11.so:system/vendor/lib/libactuator_dw9718s_sunny_a11.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s_sunny_a11_camcorder.so:system/vendor/lib/libactuator_dw9718s_sunny_a11_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9718s_sunny_a11_camera.so:system/vendor/lib/libactuator_dw9718s_sunny_a11_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b.so:system/vendor/lib/libactuator_dw9761b.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b_camcorder.so:system/vendor/lib/libactuator_dw9761b_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b_camera.so:system/vendor/lib/libactuator_dw9761b_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b_ov13853.so:system/vendor/lib/libactuator_dw9761b_ov13853.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b_ov13853_camcorder.so:system/vendor/lib/libactuator_dw9761b_ov13853_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_dw9761b_ov13853_camera.so:system/vendor/lib/libactuator_dw9761b_ov13853_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz.so:system/vendor/lib/libactuator_rohm_bu64243gwz.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_a11.so:system/vendor/lib/libactuator_rohm_bu64243gwz_a11.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_a11_camcorder.so:system/vendor/lib/libactuator_rohm_bu64243gwz_a11_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_a11_camera.so:system/vendor/lib/libactuator_rohm_bu64243gwz_a11_camera.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so:system/vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_camera.so:system/vendor/lib/libactuator_rohm_bu64243gwz_camera.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz.so:system/vendor/lib/libactuator_rohm_bu64243gwz.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_h2x.so:system/vendor/lib/libactuator_rohm_bu64243gwz_h2x.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_h2x_camcorder.so:system/vendor/lib/libactuator_rohm_bu64243gwz_h2x_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64243gwz_h2x_camera.so:system/vendor/lib/libactuator_rohm_bu64243gwz_h2x_camera.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64244.so:system/vendor/lib/libactuator_rohm_bu64244.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64244_camcorder.so:system/vendor/lib/libactuator_rohm_bu64244_camcorder.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libactuator_rohm_bu64244_camera.so:system/vendor/lib/libactuator_rohm_bu64244_camera.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libadiertac.so:system/vendor/lib/libadiertac.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libadsprpc.so:system/vendor/lib/libadsprpc.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libarcsoft_beauty_shot.so:system/vendor/lib/libarcsoft_beauty_shot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libaudcal.so:system/vendor/lib/libaudcal.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libbtnv.so:system/vendor/lib/libbtnv.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libcalmodule_akm.so:system/vendor/lib/libcalmodule_akm.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libcalmodule_gyroscope.so:system/vendor/lib/libcalmodule_gyroscope.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libcalmodule_yamaha.so:system/vendor/lib/libcalmodule_yamaha.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_gc2355_8916_common.so:system/vendor/lib/libchromatix_gc2355_8916_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_gc2355_8916_default_video.so:system/vendor/lib/libchromatix_gc2355_8916_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_gc2355_8916_preview.so:system/vendor/lib/libchromatix_gc2355_8916_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_imx219_q8n13a_common.so:system/vendor/lib/libchromatix_imx219_q8n13a_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_imx219_q8n13a_default_video.so:system/vendor/lib/libchromatix_imx219_q8n13a_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_imx219_q8n13a_liveshot.so:system/vendor/lib/libchromatix_imx219_q8n13a_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_imx219_q8n13a_preview.so:system/vendor/lib/libchromatix_imx219_q8n13a_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_imx219_q8n13a_snapshot.so:system/vendor/lib/libchromatix_imx219_q8n13a_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_common.so:system/vendor/lib/libchromatix_ov13850_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_default_video.so:system/vendor/lib/libchromatix_ov13850_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_hfr_120fps.so:system/vendor/lib/libchromatix_ov13850_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_hfr_60fps.so:system/vendor/lib/libchromatix_ov13850_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_hfr_90fps.so:system/vendor/lib/libchromatix_ov13850_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_preview.so:system/vendor/lib/libchromatix_ov13850_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13850_snapshot.so:system/vendor/lib/libchromatix_ov13850_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_common.so:system/vendor/lib/libchromatix_ov13853_q13853a_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_default_video.so:system/vendor/lib/libchromatix_ov13853_q13853a_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_hfr_120fps.so:system/vendor/lib/libchromatix_ov13853_q13853a_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_hfr_60fps.so:system/vendor/lib/libchromatix_ov13853_q13853a_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_hfr_90fps.so:system/vendor/lib/libchromatix_ov13853_q13853a_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_preview.so:system/vendor/lib/libchromatix_ov13853_q13853a_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov13853_q13853a_snapshot.so:system/vendor/lib/libchromatix_ov13853_q13853a_snapshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_5987fhq_common.so:system/vendor/lib/libchromatix_ov2680_5987fhq_common.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_5987fhq_default_video.so:system/vendor/lib/libchromatix_ov2680_5987fhq_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_5987fhq_preview.so:system/vendor/lib/libchromatix_ov2680_5987fhq_preview.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_5987fhq_snapshot.so:system/vendor/lib/libchromatix_ov2680_5987fhq_snapshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_common.so:system/vendor/lib/libchromatix_ov2680_common.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_default_video.so:system/vendor/lib/libchromatix_ov2680_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_preview.so:system/vendor/lib/libchromatix_ov2680_preview.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov2680_snapshot.so:system/vendor/lib/libchromatix_ov2680_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_common.so:system/vendor/lib/libchromatix_ov5670_86001_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_default_video.so:system/vendor/lib/libchromatix_ov5670_86001_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_86001_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_86001_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_86001_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_liveshot.so:system/vendor/lib/libchromatix_ov5670_86001_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_preview.so:system/vendor/lib/libchromatix_ov5670_86001_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_snapshot.so:system/vendor/lib/libchromatix_ov5670_86001_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_video_hd.so:system/vendor/lib/libchromatix_ov5670_86001_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_86001_zsl.so:system/vendor/lib/libchromatix_ov5670_86001_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_common.so:system/vendor/lib/libchromatix_ov5670_a11_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_default_video.so:system/vendor/lib/libchromatix_ov5670_a11_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_a11_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_a11_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_a11_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_liveshot.so:system/vendor/lib/libchromatix_ov5670_a11_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_preview.so:system/vendor/lib/libchromatix_ov5670_a11_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_snapshot.so:system/vendor/lib/libchromatix_ov5670_a11_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_common.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_default_video.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_liveshot.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_preview.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_snapshot.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_video_hd.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_sunny_zsl.so:system/vendor/lib/libchromatix_ov5670_a11_sunny_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_video_hd.so:system/vendor/lib/libchromatix_ov5670_a11_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_a11_zsl.so:system/vendor/lib/libchromatix_ov5670_a11_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_common.so:system/vendor/lib/libchromatix_ov5670_q5v41b_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_default_video.so:system/vendor/lib/libchromatix_ov5670_q5v41b_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_common.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_default_video.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_liveshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_preview.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_snapshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_video_hd.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_zsl.so:system/vendor/lib/libchromatix_ov5670_q5v41b_lenplus_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_liveshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_preview.so:system/vendor/lib/libchromatix_ov5670_q5v41b_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_common.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_default_video.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_liveshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_preview.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_snapshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_video_hd.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_qtech_zsl.so:system/vendor/lib/libchromatix_ov5670_q5v41b_qtech_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_snapshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_common.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_default_video.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_120fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_60fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_90fps.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_liveshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_preview.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_snapshot.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_video_hd.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_sunny_zsl.so:system/vendor/lib/libchromatix_ov5670_q5v41b_sunny_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_video_hd.so:system/vendor/lib/libchromatix_ov5670_q5v41b_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov5670_q5v41b_zsl.so:system/vendor/lib/libchromatix_ov5670_q5v41b_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_common.so:system/vendor/lib/libchromatix_ov8858_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_default_video.so:system/vendor/lib/libchromatix_ov8858_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_hfr_120fps.so:system/vendor/lib/libchromatix_ov8858_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_hfr_60fps.so:system/vendor/lib/libchromatix_ov8858_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_hfr_90fps.so:system/vendor/lib/libchromatix_ov8858_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_liveshot.so:system/vendor/lib/libchromatix_ov8858_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_preview.so:system/vendor/lib/libchromatix_ov8858_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8858_snapshot.so:system/vendor/lib/libchromatix_ov8858_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_common.so:system/vendor/lib/libchromatix_ov8865_a11_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_default_video.so:system/vendor/lib/libchromatix_ov8865_a11_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_hfr_120fps.so:system/vendor/lib/libchromatix_ov8865_a11_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_hfr_60fps.so:system/vendor/lib/libchromatix_ov8865_a11_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_hfr_90fps.so:system/vendor/lib/libchromatix_ov8865_a11_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_liveshot.so:system/vendor/lib/libchromatix_ov8865_a11_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_preview.so:system/vendor/lib/libchromatix_ov8865_a11_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_snapshot.so:system/vendor/lib/libchromatix_ov8865_a11_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_common.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_default_video.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_120fps.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_60fps.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_90fps.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_liveshot.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_preview.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_snapshot.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_video_hd.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_sunny_zsl.so:system/vendor/lib/libchromatix_ov8865_a11_sunny_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_video_hd.so:system/vendor/lib/libchromatix_ov8865_a11_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_a11_zsl.so:system/vendor/lib/libchromatix_ov8865_a11_zsl.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_common.so:system/vendor/lib/libchromatix_ov8865_q8v18a_common.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_default_video.so:system/vendor/lib/libchromatix_ov8865_q8v18a_default_video.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_hfr_120fps.so:system/vendor/lib/libchromatix_ov8865_q8v18a_hfr_120fps.so \
@@ -92,6 +246,8 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_liveshot.so:system/vendor/lib/libchromatix_ov8865_q8v18a_liveshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_preview.so:system/vendor/lib/libchromatix_ov8865_q8v18a_preview.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_snapshot.so:system/vendor/lib/libchromatix_ov8865_q8v18a_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_video_hd.so:system/vendor/lib/libchromatix_ov8865_q8v18a_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_q8v18a_zsl.so:system/vendor/lib/libchromatix_ov8865_q8v18a_zsl.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_common.so:system/vendor/lib/libchromatix_ov8865_qtech_common.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_default_video.so:system/vendor/lib/libchromatix_ov8865_qtech_default_video.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_hfr_120fps.so:system/vendor/lib/libchromatix_ov8865_qtech_hfr_120fps.so \
@@ -100,6 +256,8 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_liveshot.so:system/vendor/lib/libchromatix_ov8865_qtech_liveshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_preview.so:system/vendor/lib/libchromatix_ov8865_qtech_preview.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_snapshot.so:system/vendor/lib/libchromatix_ov8865_qtech_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_video_hd.so:system/vendor/lib/libchromatix_ov8865_qtech_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_qtech_zsl.so:system/vendor/lib/libchromatix_ov8865_qtech_zsl.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_common.so:system/vendor/lib/libchromatix_ov8865_sunny_common.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_default_video.so:system/vendor/lib/libchromatix_ov8865_sunny_default_video.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_hfr_120fps.so:system/vendor/lib/libchromatix_ov8865_sunny_hfr_120fps.so \
@@ -108,6 +266,57 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_liveshot.so:system/vendor/lib/libchromatix_ov8865_sunny_liveshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_preview.so:system/vendor/lib/libchromatix_ov8865_sunny_preview.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_snapshot.so:system/vendor/lib/libchromatix_ov8865_sunny_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_video_hd.so:system/vendor/lib/libchromatix_ov8865_sunny_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_ov8865_sunny_zsl.so:system/vendor/lib/libchromatix_ov8865_sunny_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3h7_8916_common.so:system/vendor/lib/libchromatix_s5k3h7_8916_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3h7_8916_default_video.so:system/vendor/lib/libchromatix_s5k3h7_8916_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3h7_8916_preview.so:system/vendor/lib/libchromatix_s5k3h7_8916_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3h7_8916_snapshot.so:system/vendor/lib/libchromatix_s5k3h7_8916_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_common.so:system/vendor/lib/libchromatix_s5k3l2_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_default_video.so:system/vendor/lib/libchromatix_s5k3l2_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_hfr_120fps.so:system/vendor/lib/libchromatix_s5k3l2_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_hfr_60fps.so:system/vendor/lib/libchromatix_s5k3l2_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_hfr_90fps.so:system/vendor/lib/libchromatix_s5k3l2_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_liveshot.so:system/vendor/lib/libchromatix_s5k3l2_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_preview.so:system/vendor/lib/libchromatix_s5k3l2_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_snapshot.so:system/vendor/lib/libchromatix_s5k3l2_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_video_hd.so:system/vendor/lib/libchromatix_s5k3l2_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l2_zsl.so:system/vendor/lib/libchromatix_s5k3l2_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_common.so:system/vendor/lib/libchromatix_s5k3l8_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_default_video.so:system/vendor/lib/libchromatix_s5k3l8_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_hfr_120fps.so:system/vendor/lib/libchromatix_s5k3l8_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_hfr_60fps.so:system/vendor/lib/libchromatix_s5k3l8_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_hfr_90fps.so:system/vendor/lib/libchromatix_s5k3l8_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_preview.so:system/vendor/lib/libchromatix_s5k3l8_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_common.so:system/vendor/lib/libchromatix_s5k3l8_qtech_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_default_video.so:system/vendor/lib/libchromatix_s5k3l8_qtech_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_hfr_120fps.so:system/vendor/lib/libchromatix_s5k3l8_qtech_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_hfr_60fps.so:system/vendor/lib/libchromatix_s5k3l8_qtech_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_hfr_90fps.so:system/vendor/lib/libchromatix_s5k3l8_qtech_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_preview.so:system/vendor/lib/libchromatix_s5k3l8_qtech_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_qtech_snapshot.so:system/vendor/lib/libchromatix_s5k3l8_qtech_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_snapshot.so:system/vendor/lib/libchromatix_s5k3l8_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_common.so:system/vendor/lib/libchromatix_s5k3l8_sunny_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_default_video.so:system/vendor/lib/libchromatix_s5k3l8_sunny_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_hfr_120fps.so:system/vendor/lib/libchromatix_s5k3l8_sunny_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_hfr_60fps.so:system/vendor/lib/libchromatix_s5k3l8_sunny_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_hfr_90fps.so:system/vendor/lib/libchromatix_s5k3l8_sunny_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_preview.so:system/vendor/lib/libchromatix_s5k3l8_sunny_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k3l8_sunny_snapshot.so:system/vendor/lib/libchromatix_s5k3l8_sunny_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_common.so:system/vendor/lib/libchromatix_s5k5e8_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_default_video.so:system/vendor/lib/libchromatix_s5k5e8_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_hfr_120fps.so:system/vendor/lib/libchromatix_s5k5e8_hfr_120fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_hfr_60fps.so:system/vendor/lib/libchromatix_s5k5e8_hfr_60fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_hfr_90fps.so:system/vendor/lib/libchromatix_s5k5e8_hfr_90fps.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_liveshot.so:system/vendor/lib/libchromatix_s5k5e8_liveshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_preview.so:system/vendor/lib/libchromatix_s5k5e8_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_snapshot.so:system/vendor/lib/libchromatix_s5k5e8_snapshot.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_video_hd.so:system/vendor/lib/libchromatix_s5k5e8_video_hd.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_s5k5e8_zsl.so:system/vendor/lib/libchromatix_s5k5e8_zsl.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_sp2508_common.so:system/vendor/lib/libchromatix_sp2508_common.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_sp2508_default_video.so:system/vendor/lib/libchromatix_sp2508_default_video.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_sp2508_preview.so:system/vendor/lib/libchromatix_sp2508_preview.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libchromatix_sp2508_snapshot.so:system/vendor/lib/libchromatix_sp2508_snapshot.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libcneapiclient.so:system/vendor/lib/libcneapiclient.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libconfigdb.so:system/vendor/lib/libconfigdb.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libdiag.so:system/vendor/lib/libdiag.so \
@@ -116,6 +325,7 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libdrmtime.so:system/vendor/lib/libdrmtime.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libdsi_netctrl.so:system/vendor/lib/libdsi_netctrl.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libdsutils.so:system/vendor/lib/libdsutils.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libFaceProc.so:system/vendor/lib/libFaceProc.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libfastcvopt.so:system/vendor/lib/libfastcvopt.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libFlacSwDec.so:system/vendor/lib/libFlacSwDec.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libflp.so:system/vendor/lib/libflp.so \
@@ -137,21 +347,48 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_frame_algorithm.so:system/vendor/lib/libmmcamera2_frame_algorithm.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_iface_modules.so:system/vendor/lib/libmmcamera2_iface_modules.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_imglib_modules.so:system/vendor/lib/libmmcamera2_imglib_modules.so \
-    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_isp_modules.so:system/vendor/lib/libmmcamera2_isp_modules.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_is.so:system/vendor/lib/libmmcamera2_is.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_isp_modules.so:system/vendor/lib/libmmcamera2_isp_modules.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_pproc_modules.so:system/vendor/lib/libmmcamera2_pproc_modules.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_q3a_core.so:system/vendor/lib/libmmcamera2_q3a_core.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_sensor_modules.so:system/vendor/lib/libmmcamera2_sensor_modules.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_stats_algorithm.so:system/vendor/lib/libmmcamera2_stats_algorithm.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_stats_modules.so:system/vendor/lib/libmmcamera2_stats_modules.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_vpe_module.so:system/vendor/lib/libmmcamera2_vpe_module.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera2_wnr_module.so:system/vendor/lib/libmmcamera2_wnr_module.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_faceproc.so:system/vendor/lib/libmmcamera_faceproc.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_gc2355_8916.so:system/vendor/lib/libmmcamera_gc2355_8916.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_hdr_gb_lib.so:system/vendor/lib/libmmcamera_hdr_gb_lib.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_hdr_lib.so:system/vendor/lib/libmmcamera_hdr_lib.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_imglib.so:system/vendor/lib/libmmcamera_imglib.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_imx219_q8n13a.so:system/vendor/lib/libmmcamera_imx219_q8n13a.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_mt9m114.so:system/vendor/lib/libmmcamera_mt9m114.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov13850.so:system/vendor/lib/libmmcamera_ov13850.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov13850_eeprom.so:system/vendor/lib/libmmcamera_ov13850_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov13853_eeprom.so:system/vendor/lib/libmmcamera_ov13853_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov13853_q13853a.so:system/vendor/lib/libmmcamera_ov13853_q13853a.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov2680.so:system/vendor/lib/libmmcamera_ov2680.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov2680_5987fhq.so:system/vendor/lib/libmmcamera_ov2680_5987fhq.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov2680_skuhf.so:system/vendor/lib/libmmcamera_ov2680_skuhf.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov5670_86001.so:system/vendor/lib/libmmcamera_ov5670_86001.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov5670_a11.so:system/vendor/lib/libmmcamera_ov5670_a11.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov5670_eeprom.so:system/vendor/lib/libmmcamera_ov5670_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov5670_q5v41b.so:system/vendor/lib/libmmcamera_ov5670_q5v41b.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov8858.so:system/vendor/lib/libmmcamera_ov8858.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov8865_a11.so:system/vendor/lib/libmmcamera_ov8865_a11.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov8865_a11_eeprom.so:system/vendor/lib/libmmcamera_ov8865_a11_eeprom.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_ov8865_q8v18a.so:system/vendor/lib/libmmcamera_ov8865_q8v18a.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_pdaf.so:system/vendor/lib/libmmcamera_pdaf.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_pdafcamif.so:system/vendor/lib/libmmcamera_pdafcamif.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k3h7_8916.so:system/vendor/lib/libmmcamera_s5k3h7_8916.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k3h7_eeprom.so:system/vendor/lib/libmmcamera_s5k3h7_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k3l2.so:system/vendor/lib/libmmcamera_s5k3l2.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k3l8.so:system/vendor/lib/libmmcamera_s5k3l8.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k3l8_eeprom.so:system/vendor/lib/libmmcamera_s5k3l8_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k5e8.so:system/vendor/lib/libmmcamera_s5k5e8.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_s5k5e8_eeprom.so:system/vendor/lib/libmmcamera_s5k5e8_eeprom.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_sp2508.so:system/vendor/lib/libmmcamera_sp2508.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_sunny_ov8858_q8v19w_eeprom.so:system/vendor/lib/libmmcamera_sunny_ov8858_q8v19w_eeprom.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_sunny_q8v18a_eeprom.so:system/vendor/lib/libmmcamera_sunny_q8v18a_eeprom.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_tintless_algo.so:system/vendor/lib/libmmcamera_tintless_algo.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so:system/vendor/lib/libmmcamera_tintless_bg_pca_algo.so \
@@ -164,6 +401,7 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmosal.so:system/vendor/lib/libmmosal.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmm-qdcm.so:system/vendor/lib/libmm-qdcm.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libmmqjpeg_codec.so:system/vendor/lib/libmmqjpeg_codec.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libmorpho_panorama_gp.so:system/vendor/lib/libmorpho_panorama_gp.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libnetmgr.so:system/vendor/lib/libnetmgr.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/liboemcamera.so:system/vendor/lib/liboemcamera.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libOmxAacDec.so:system/vendor/lib/libOmxAacDec.so \
@@ -181,6 +419,7 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libqmi_encdec.so:system/vendor/lib/libqmi_encdec.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libqmiservices.so:system/vendor/lib/libqmiservices.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libqmi.so:system/vendor/lib/libqmi.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libqomx_jpegdec.so:system/vendor/lib/libqomx_jpegdec.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libqomx_jpegenc.so:system/vendor/lib/libqomx_jpegenc.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libQSEEComAPI.so:system/vendor/lib/libQSEEComAPI.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
@@ -194,6 +433,8 @@ PRODUCT_COPY_FILES += \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libthermalclient.so:system/vendor/lib/libthermalclient.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libthermalioctl.so:system/vendor/lib/libthermalioctl.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libTimeService.so:system/vendor/lib/libTimeService.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libts_detected_face_hal.so:system/vendor/lib/libts_detected_face_hal.so \
+    vendor/wingtech/wt88047/proprietary/vendor/lib/libts_face_beautify_hal.so:system/vendor/lib/libts_face_beautify_hal.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/wingtech/wt88047/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
